@@ -27,7 +27,7 @@ body {
   gap: 15px;
 }
 
-.button {
+button {
   height: 28px;
   width: 28px;
   display: grid;
@@ -37,6 +37,7 @@ body {
   background-color: #ffffff;
   outline: none;
   color: #020929;
+  cursor: pointer;
 }
 
 .select {

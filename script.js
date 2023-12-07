@@ -25,6 +25,7 @@ const initializer = () => {
   highlighter(formatButtons, false)
   highlighter(scriptButtons, true)
 
+  //Criar opções de fontes
   fontList.map((value) => {
     let option = document.createElement("option")
     option.value = value;
@@ -39,15 +40,22 @@ const initializer = () => {
     option.innerHTML = i
     fontSize.appendChild(option)
   }
-
+  //tamanho padrão
   fontSize.value = 3;
 }
 
+//lógica principal
 const modifyText = (command, defaultUi, value) => {
   document.execCommand(command, defaultUi, value)
 }
 
 optionsButtons.forEach((button) => {
+  button.addEventListener("change", () => {
+    modifyText(button.id, false, null)
+  })
+})
+
+advancedButtons.forEach((button) => {
   button.addEventListener("change", () => {
     modifyText(button.id, false, button.value)
   })
@@ -74,20 +82,28 @@ const highlighter = (className, needsRemoval) => {
           alreadyActive = true
         }
 
+        highlighterRemover(className)
         if(!alreadyActive) {
           button.classList.add("active")
         }
-      }else {
+      }
+      else {
         button.classList.toggle("active")
       }
     })
   })
 }
 
-const highlighterRemover = (className) => {
-  className.forEach((button) => {
-    button.classList.remove("active")
-  })
+const getFontSize = (heading) => {
+  const headingSizes = {
+    H1: "7",
+    H2: "6",
+    H3: "5",
+    H4: "4",
+    H5: "3",
+    H6: "2",
+  }
+  return headingSizes[heading] || "inherit"
 }
 
 window.onload = initializer()
