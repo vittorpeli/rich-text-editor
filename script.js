@@ -94,16 +94,10 @@ const highlighter = (className, needsRemoval) => {
   })
 }
 
-const getFontSize = (heading) => {
-  const headingSizes = {
-    H1: "7",
-    H2: "6",
-    H3: "5",
-    H4: "4",
-    H5: "3",
-    H6: "2",
-  }
-  return headingSizes[heading] || "inherit"
+const highlighterRemover = (className) => {
+  className.forEach((button) => {
+    button.classList.remove('active')
+  })
 }
 
 window.onload = initializer()
