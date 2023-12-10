@@ -50,7 +50,7 @@ const modifyText = (command, defaultUi, value) => {
 }
 
 optionsButtons.forEach((button) => {
-  button.addEventListener("change", () => {
+  button.addEventListener("click", () => {
     modifyText(button.id, false, null)
   })
 })
