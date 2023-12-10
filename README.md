@@ -7,9 +7,9 @@
 <br> 
 <h2>Processo</h2>
 <h3>Feito Com:</h3>
-* HTML
-* CSS
-* JavaScript
++ HTML
++ CSS
++ JavaScript
 <br>
 <h3> O que aprendi </h3>
 Aprendi bastante sobre manipulação de DOM, lidar com input do usuário e formatação de texto.
